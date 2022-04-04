@@ -47,6 +47,7 @@ require_once 'baglan.php';
 	echo $bilgilerimcek['bilgilerim_ad'];
 	*/
 	//SELECT İŞLEMİ
+	/*
 	$bilgilerimsor=$db->prepare("SELECT * from bilgilerim");
 	$bilgilerimsor->execute();
 
@@ -55,6 +56,7 @@ require_once 'baglan.php';
 		echo $bilgilerimcek['bilgilerim_ad'];
 		echo "<br>";
 	}
+	*/
 	?>
 
 </body>
