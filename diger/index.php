@@ -59,5 +59,35 @@ require_once 'baglan.php';
 	*/
 	?>
 
+	<table style="width: 60%" border="1">
+		<tr>
+			<th width="50">Sıra No</th>
+			<th>Id</th>
+			<th>Ad</th>
+			<th>Soyad</th>
+			<th>Mail</th>
+			<th>Yaş</th>
+			<th width="50">İşlemler</th>
+		</tr>
+<?php  
+$bilgilerimsor=$db->prepare("SELECT * FROM bilgilerim");
+$bilgilerimsor->execute();
+
+$say=0;
+
+while ($bilgilerimcek=$bilgilerimsor->fetch(PDO::FETCH_ASSOC)) { $say++;?>
+
+		<tr>
+			<td><?php echo $say; ?></td>
+			<td><?php echo $bilgilerimcek['bilgilerim_id'] ?></td>
+			<td><?php echo $bilgilerimcek['bilgilerim_ad'] ?></td>
+			<td><?php echo $bilgilerimcek['bilgilerim_soyad'] ?></td>
+			<td><?php echo $bilgilerimcek['bilgilerim_mail'] ?></td>
+			<td><?php echo $bilgilerimcek['bilgilerim_yas'] ?></td>
+			<td align="center"><a href=""><button>Sil</button></td></a>
+		</tr>
+		<?php } ?>
+
+	</table>
 </body>
 </html>
